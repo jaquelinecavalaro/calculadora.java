@@ -37,19 +37,14 @@ public class CadastroController {
 	}
 	
 	@GetMapping("/nomeDoAnuncio/{nomeDoAnuncio}")
-	public ResponseEntity<List<Cadastro>> getByNomeCompleto(@PathVariable String nomeDoAnuncio){
-		return ResponseEntity.ok(repository.findAllByNomeDoAnuncioContainingIgnoreCase(nomeDoAnuncio));
+	public ResponseEntity<List<Cadastro>> getByNomeCompleto(@PathVariable String cliente){
+		return ResponseEntity.ok(repository.findAllByClienteContainingIgnoreCase(cliente));
 	}
 	
 	@PostMapping
 	public ResponseEntity<Cadastro> post (@RequestBody Cadastro cliente) {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(repository.save(cliente));
-	}
-	
-	@PutMapping
-	public ResponseEntity<Cadastro> put (@RequestBody Cadastro postagem) {
-		return ResponseEntity.ok(repository.save(postagem));
 	}
 	
 }

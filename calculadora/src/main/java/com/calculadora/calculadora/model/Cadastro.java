@@ -34,7 +34,7 @@ public class Cadastro {
 	
 	private float investimentoPorDia;
 	
-
+	
 	public String getNomeDoAnuncio() {
 		return nomeDoAnuncio;
 	}
